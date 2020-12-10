@@ -34,7 +34,7 @@ function VisualEditor(props) {
         //  'https://cdn.jcu.edu.au/cookbook/2.0/css/cookbook.min.css,https://cdn.jcu.edu.au/cookbook/2.0/css/fonts.min.css',
         //content_css_cors: true,
         content_style: `body { font-family: sans-serif; }`,
-        max_height: '20rem',
+        max_height: '90vh',
         autoresize_bottom_margin: 0,
         body_class: '',
         forced_root_block: '',
@@ -66,7 +66,7 @@ function VisualEditor(props) {
               {
                 type: 'htmlpanel',
                 html: `
-                <p>This editor is for modifying messages used in ReDBox language files.</p>
+                <p>This editor is for modifying descriptions used in Research Data JCU.</p>
                 <p>This visual HTML editor is configured to work for:</p>
                 <ul>
                   <li><strong>Labels</strong>: simple text-based messages which are typically short, single-line strings (allowed content are <strong>bold</strong>, <em>italic</em> and <a href="#">linked text</a>), and</li>
@@ -92,9 +92,9 @@ function App() {
   window.onbeforeunload = () => true
 
   return (
-    <div className="App">
+    <div className="App my-1">
       <Container fluid>
-        <Row as="main" className="mt-5 mb-3">
+        <Row as="main">
           <Col>
             <VisualEditor />
           </Col>
