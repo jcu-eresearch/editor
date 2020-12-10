@@ -37,9 +37,6 @@ function VisualEditor(props) {
         max_height: '90vh',
         autoresize_bottom_margin: 0,
         body_class: '',
-        forced_root_block: '',
-        force_br_newlines: false,
-        force_p_newlines: false,
         menubar: false,
         statusbar: false,
         branding: false,
@@ -60,7 +57,7 @@ function VisualEditor(props) {
           'undo redo searchreplace | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link | removeformat | code | help',
         help_tabs: [
           {
-            name: 'languageeditor',
+            name: 'about',
             title: 'About This App',
             items: [
               {
