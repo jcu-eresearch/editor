@@ -88,13 +88,10 @@ function VisualEditor(props) {
               {
                 type: 'htmlpanel',
                 html: `
-                <p>This editor is for modifying descriptions used in Research Data JCU.</p>
-                <p>This visual HTML editor is configured to work for:</p>
-                <ul>
-                  <li><strong>Labels</strong>: simple text-based messages which are typically short, single-line strings (allowed content are <strong>bold</strong>, <em>italic</em> and <a href="#">linked text</a>), and</li>
-                  <li><strong>Rich HTML:</strong> more complicated messages that contain multiple paragraphs, styling, headings, bullets, numbering and more.</li>
-                </ul>
-                <p>Because this visual HTML editor needs to work for both types of message, hitting <kbd>Enter</kbd> or <kbd>Return</kbd> will insert a Line Break (<code>&lt;br&gt;</code>) rather than a new Paragraph (<code>&lt;p&gt;</code>). To create a new paragraph, use <kbd>Shift</kbd> + <kbd>Enter/Return</kbd> when entering text.</p>
+                <p>This editor is for modifying rich text descriptions used in <a href="https://research.jcu.edu.au/data/">Research Data JCU</a>.</p>
+                <p>This visual editor is configured to allow you to flexibily create rich content such as styled text, links, tables and more when describing your Data Records or Data Publications.</p>
+                <p>Because of current limitations in the Research Data JCU platform, you can use this editor to prepare your content from scratch, by pasting in content from external applications, or by copy and pasting existing content in from Research Data JCU records</p>
+                <p>When you're done editing, click the <kbd>Copy all</kbd> button on the toolbar and switch back to Research Data JCU where you can paste the HTML-formatted content into the Description or Descriptor field you're editing.</p>
                 <p>Other help documentation for this visual editor, including shortcuts, is available from the links in this Help panel.</p>
                 `,
               },
