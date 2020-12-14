@@ -22,3 +22,21 @@
   color: #fff;
   background-color: #212529;
 }
+
+.tox .tox-tbtn[title$='HTML source'] {
+  margin-left: 0.375rem;
+  background: #06c;
+  color: #fff;
+}
+
+.tox .tox-tbtn[title$='HTML source']:hover {
+  background: #2e3192;
+}
+
+.tox .tox-tbtn[title$='HTML source'] svg {
+  fill: #fff;
+}
+
+.tox .tox-tbtn[title$='HTML source'] .tox-tbtn__select-label {
+  cursor: pointer;
+}

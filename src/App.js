@@ -1,28 +1,25 @@
 import React from 'react'
-import {
-  Container,
-  Row,
-  Col,
-} from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 
 import tinymce from 'tinymce/tinymce' // eslint-disable-line no-unused-vars
 import 'tinymce/icons/default'
 import 'tinymce/themes/silver'
-import 'tinymce/plugins/autoresize'
+import 'tinymce/plugins/table'
 import 'tinymce/plugins/autolink'
 import 'tinymce/plugins/advlist'
 import 'tinymce/plugins/lists'
 import 'tinymce/plugins/link'
-import 'tinymce/plugins/image'
 import 'tinymce/plugins/searchreplace'
+import 'tinymce/plugins/charmap'
+import 'tinymce/plugins/image'
 import 'tinymce/plugins/code'
 import 'tinymce/plugins/fullscreen'
 import 'tinymce/plugins/paste'
 import 'tinymce/plugins/help'
 import { Editor } from '@tinymce/tinymce-react'
 
-import 'tinymce/skins/ui/oxide/skin.css'
-import 'tinymce/skins/ui/oxide/content.inline.css'
+import 'tinymce/skins/ui/oxide/skin.min.css'
+import 'tinymce/skins/ui/oxide/content.inline.min.css'
 import './App.css'
 
 function VisualEditor(props) {
@@ -30,31 +27,59 @@ function VisualEditor(props) {
     <Editor
       init={{
         skin: false,
-        //content_css:
-        //  'https://cdn.jcu.edu.au/cookbook/2.0/css/cookbook.min.css,https://cdn.jcu.edu.au/cookbook/2.0/css/fonts.min.css',
-        //content_css_cors: true,
+        content_css: false,
         content_style: `body { font-family: sans-serif; }`,
-        max_height: '90vh',
-        autoresize_bottom_margin: 0,
+        height: '85vh',
         body_class: '',
-        menubar: false,
+        menubar: true,
         statusbar: false,
         branding: false,
         plugins: [
-          'autoresize',
+          'table',
           'advlist',
           'autolink',
           'lists',
           'link',
-          'image',
           'searchreplace',
+          'charmap',
+          'image',
           'code',
           'fullscreen',
           'paste',
           'help',
         ],
         toolbar:
-          'undo redo searchreplace | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link | removeformat | code | help',
+          'undo redo | formatselect | bold italic | superscript subscript | alignleft aligncenter alignright | bullist numlist outdent indent | link image table charmap | code | htmlCopy',
+        toolbar_mode: 'sliding',
+        contextmenu: 'link image table',
+        // Prevent Links opening in new window
+        target_list: false,
+        setup: editor => {
+          editor.ui.registry.addButton('htmlCopy', {
+            icon: 'copy',
+            text: 'Copy all',
+            tooltip: 'Copy all as HTML source',
+            onAction: () =>
+              navigator.clipboard.writeText(editor.getContent()).then(
+                () =>
+                  editor.notificationManager.open({
+                    text:
+                      'Content copied to clipboard! Switch back to Research Data JCU and paste it into the relevant field.',
+                    type: 'info',
+                    timeout: 3000,
+                    closeButton: false,
+                  }),
+                () =>
+                  editor.notificationManager.open({
+                    text:
+                      'Could not copy to clipboard. Use the Code <> button and copy manually.',
+                    type: 'error',
+                    timeout: 3000,
+                    closeButton: false,
+                  })
+              ),
+          })
+        },
         help_tabs: [
           {
             name: 'about',
@@ -91,18 +116,23 @@ function App() {
   return (
     <div className="App my-1">
       <Container fluid>
+        <Row as="header">
+          <Col>
+            <h1 className="lead">Research Data JCU – Visual Editor</h1>
+          </Col>
+        </Row>
         <Row as="main">
           <Col>
             <VisualEditor />
           </Col>
         </Row>
-        <Row as="footer" className="pt-3 border-top">
+        <Row as="footer" className="pt-2">
           <Col className="text-center text-muted">
-            <ul class="list-inline">
-              <li class="list-inline-item mr-2 pr-2 border-right">
-                Made by the{' '}
-                <a href="https://github.com/jcu-eresearch">
-                  JCU eResearch Centre
+            <ul className="list-inline">
+              <li className="list-inline-item">
+                Need help? Ask the{' '}
+                <a href="mailto:researchdata@jcu.edu.au">
+                  Research Data JCU team
                 </a>
               </li>
             </ul>
