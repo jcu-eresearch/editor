@@ -3,7 +3,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 This project automatically deploys itself to GitHub Pages via GitHub Actions
-to be hosted at https://jcu-eresearch.github.io/editor/.
+to be hosted at https://research.jcu.edu.au/data/editor/.
 
 ## Features
 
