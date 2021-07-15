@@ -18,6 +18,8 @@ import 'tinymce/plugins/paste'
 import 'tinymce/plugins/help'
 import { Editor } from '@tinymce/tinymce-react'
 
+import { version } from '../package.json'
+
 import 'tinymce/skins/ui/oxide/skin.min.css'
 import 'tinymce/skins/ui/oxide/content.inline.min.css'
 import './App.css'
@@ -124,12 +126,13 @@ function App() {
         <Row as="footer" className="pt-2">
           <Col className="text-center text-muted">
             <ul className="list-inline">
-              <li className="list-inline-item">
+              <li className="list-inline-item mr-2 pr-2 border-right">
                 Need help? Ask the{' '}
                 <a href="mailto:researchdata@jcu.edu.au">
                   Research Data JCU team
                 </a>
               </li>
+              <li className="list-inline-item">v{version}</li>
             </ul>
           </Col>
         </Row>
