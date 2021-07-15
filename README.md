@@ -2,6 +2,8 @@
 
 [![Deployment on GitHub Pages](https://github.com/jcu-eresearch/editor/workflows/Deploy-GitHubPages/badge.svg)](https://github.com/jcu-eresearch/editor/actions?query=workflow%3ADeploy-GitHubPages)
 
+An externally-hosted visual HTML editor for Research Data JCU as ReDBox v2 no longer has one.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 This project automatically deploys itself to GitHub Pages via GitHub Actions
