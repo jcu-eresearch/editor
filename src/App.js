@@ -63,16 +63,14 @@ function VisualEditor(props) {
               navigator.clipboard.writeText(editor.getContent()).then(
                 () =>
                   editor.notificationManager.open({
-                    text:
-                      'Content copied to clipboard! Switch back to Research Data JCU and paste it into the relevant field.',
+                    text: 'Content copied to clipboard! Switch back to Research Data JCU and paste it into the relevant field.',
                     type: 'info',
                     timeout: 3000,
                     closeButton: false,
                   }),
                 () =>
                   editor.notificationManager.open({
-                    text:
-                      'Could not copy to clipboard. Use the Code <> button and copy manually.',
+                    text: 'Could not copy to clipboard. Use the Code <> button and copy manually.',
                     type: 'error',
                     timeout: 3000,
                     closeButton: false,
