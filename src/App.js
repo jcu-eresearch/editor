@@ -126,7 +126,7 @@ function App() {
         <Row as="footer" className="pt-2">
           <Col className="text-center text-muted">
             <ul className="list-inline">
-              <li className="list-inline-item mr-2 pr-2 border-right">
+              <li className="list-inline-item me-2 pe-2 border-right">
                 Need help? Ask the{' '}
                 <a href="mailto:researchdata@jcu.edu.au">
                   Research Data JCU team

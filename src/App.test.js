@@ -16,8 +16,6 @@ test('renders the app', () => {
 })
 
 test('copy all function works', async () => {
-  document.writeText = jest.fn();
-
   const writeTextFn = jest.fn(async () => {})
 
   Object.assign(navigator, {
