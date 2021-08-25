@@ -90,7 +90,7 @@ function VisualEditor(props) {
                 html: `
                 <p>This editor is for modifying rich text descriptions used in <a href="https://research.jcu.edu.au/data/">Research Data JCU</a>.</p>
                 <p>This visual editor is configured to allow you to flexibily create rich content such as styled text, links, tables and more when describing your Data Records or Data Publications.</p>
-                <p>Because of current limitations in the Research Data JCU platform, you can use this editor to prepare your content from scratch, by pasting in content from external applications, or by copy and pasting existing content in from Research Data JCU records</p>
+                <p>Because of current limitations in the Research Data JCU platform, you can use this editor to prepare your content from scratch, by pasting in content from external applications, or by copy and pasting existing content in from Research Data JCU records.</p>
                 <p>When you're done editing, click the <kbd>Copy all</kbd> button on the toolbar and switch back to Research Data JCU where you can paste the HTML-formatted content into the Description or Descriptor field you're editing.</p>
                 <p>Other help documentation for this visual editor, including shortcuts, is available from the links in this Help panel.</p>
                 `,
